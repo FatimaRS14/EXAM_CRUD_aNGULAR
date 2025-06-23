@@ -1,4 +1,4 @@
 export class Roles{
     idRol !: number;
-    privilegio !: String;
+    privilegio ?: String;
 }

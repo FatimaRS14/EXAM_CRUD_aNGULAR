@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="card-header">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h2>Listar Usuarios</h2>
+      <button class="btn btn-registrar" (click)="guardarU()">Registrar nuevo</button>
+    </div>
+  </div>
+
+  <table class="tabla-roles">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>Sexo</th>
+        <th>Correo</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Fecha de Creación</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of usuario; trackBy: trackByUsuarioId">
+        <td>{{ u.idUsuario }}</td>
+        <td>{{ u.nombre }}</td>
+        <td>{{ u.apellidoP }}</td>
+        <td>{{ u.apellidoM }}</td>
+        <td>{{ u.sexo }}</td>
+        <td>{{ u.correo }}</td>
+        <td>{{ u.fechaNacimiento }}</td>
+        <td>{{ u.fechaCreacion }}</td>
+        <td>{{ u.rolId.privilegio }}</td>
+        <td>
+          <button class="btn btn-editar" (click)="editar(u.idUsuario)">Editar</button>
+          <button class="btn btn-eliminar" (click)="eliminar(u.idUsuario)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

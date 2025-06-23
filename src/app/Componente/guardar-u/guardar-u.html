@@ -1,0 +1,145 @@
+<div class="container">
+  <div class="card-header">
+    <h2>Registrar Usuario</h2>
+  </div>
+
+  <form #formUsuario="ngForm" (ngSubmit)="guardarU()" class="form-rol">
+
+    <div class="form-group">
+      <label for="idUsuario">IdUsuario</label>
+      <input
+        type="text"
+        id="idUsuario"
+        name="idUsuario"
+        class="form-control"
+        placeholder="Ingresa el IdUsuario"
+        required
+        [(ngModel)]="u.idUsuario" />
+      <div *ngIf="formUsuario.submitted && !formUsuario.controls['idUsuario']?.valid" class="alerta">
+        El campo del id no puede estar vacio.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        class="form-control"
+        placeholder="Ingresa el nombre"
+        required
+        pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$"
+        [(ngModel)]="u.nombre" />
+      <div *ngIf="formUsuario.submitted && !formUsuario.controls['nombre']?.valid" class="alerta">
+        El nombre es requerido y solo puede contener letras.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="apellidoP">Apellido Paterno</label>
+      <input
+        type="text"
+        id="apellidoP"
+        name="apellidoP"
+        class="form-control"
+        placeholder="Ingresa el apellido paterno"
+        required
+        pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$"
+        [(ngModel)]="u.apellidoP" />
+      <div *ngIf="formUsuario.submitted && !formUsuario.controls['apellidoP']?.valid" class="alerta">
+        El apellido paterno es requerido y solo puede contener letras.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="apellidoM">Apellido Materno</label>
+      <input
+        type="text"
+        id="apellidoM"
+        name="apellidoM"
+        class="form-control"
+        placeholder="Ingresa el apellido materno"
+        required
+        pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$"
+        [(ngModel)]="u.apellidoM" />
+      <div *ngIf="formUsuario.submitted && !formUsuario.controls['apellidoM']?.valid" class="alerta">
+        El apellido materno es requerido y solo puede contener letras.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="sexo">Sexo</label>
+      <select
+        id="sexo"
+        name="sexo"
+        class="form-control"
+        required
+        [(ngModel)]="u.sexo">
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+      </select>
+      <div *ngIf="formUsuario.submitted && !formUsuario.controls['sexo']?.valid" class="alerta">
+        El sexo es obligatorio.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="correo">Correo electrónico</label>
+      <input
+        type="email"
+        id="correo"
+        name="correo"
+        class="form-control"
+        placeholder="Correo del usuario"
+        disabled
+        [(ngModel)]="u.correo" />
+    </div>
+
+    <div class="form-group">
+      <label for="fechaNacimiento">Fecha de Nacimiento</label>
+      <input
+        type="date"
+        id="fechaNacimiento"
+        name="fechaNacimiento"
+        class="form-control"
+        required
+        [(ngModel)]="u.fechaNacimiento" />
+      <div *ngIf="formUsuario.submitted && !formUsuario.controls['fechaNacimiento']?.valid" class="alerta">
+        La fecha de nacimiento es obligatoria.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="fechaCreacion">Fecha de Creacion</label>
+      <input
+        type="date"
+        id="fechaCreacion"
+        name="fechaCreacion"
+        class="form-control"
+        required
+        [(ngModel)]="u.fechaCreacion" />
+      <div *ngIf="formUsuario.submitted && !formUsuario.controls['fechaNacimiento']?.valid" class="alerta">
+        La fecha de creacion es obligatoria.
+      </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="form-group" class="form-label">Selecciona un Rol</label>
+       <select 
+            [(ngModel)]="rolIdSolo" 
+            name="rolIdSolo"        
+            required>
+            <option value="" disabled selected>-- Selecciona un rol --</option>
+            <option *ngFor="let rol of roles" [value]="rol.idRol">{{ rol.privilegio }}</option>
+        </select>
+
+
+    </div>
+
+
+
+    <button class="btn btn-registrar" [disabled]="!formUsuario.valid">Guardar Usuario</button>
+  </form>
+</div>
