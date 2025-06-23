@@ -46,7 +46,7 @@ export class Ws {
     return this.http.post<Usuarios>(this.urlu + "/buscar", u);
   }
 
-  editarU(u:Usuarios){
+  editarU(u: Usuarios){
     return this.http.put<String>(this.urlu + "/editar", u);
   }
 

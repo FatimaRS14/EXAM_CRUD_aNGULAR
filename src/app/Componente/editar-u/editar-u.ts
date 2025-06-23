@@ -16,14 +16,21 @@ import Swal from 'sweetalert2';
 export class EditarU implements OnInit{
   constructor(private service:Ws, private router:Router){}
   rol : Roles[] = [];
-  u = new Usuarios();
+  u = new Usuarios;
   rolIdSolo: number = 0;
+
   ngOnInit(): void {
-    
+    // this.service.listarR().subscribe({
+    //   next: (data) =>{
+    //     console.log(data);
+    //   }
+    // });
+    this.buscarU();
   }
 
   buscarU(){
     this.u.idUsuario = Number(localStorage.getItem("idUsuario"));
+    console.log(this.u)
     this.service.buscarU(this.u).subscribe(data =>{
       console.log(JSON.stringify(data));
       this.u = data;

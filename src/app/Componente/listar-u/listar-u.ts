@@ -38,7 +38,8 @@ export class ListarU implements OnInit{
     }
 
     editar(idUsuario: number){
-      localStorage.setItem("isUsuario", idUsuario.toString());
+      console.log("ID recibido al hacer clic en editar:", idUsuario);
+      localStorage.setItem("idUsuario", idUsuario.toString());
       this.router.navigate(['editarU']);
     }
 
