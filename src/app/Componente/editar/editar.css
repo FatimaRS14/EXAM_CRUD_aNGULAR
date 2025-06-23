@@ -1,0 +1,52 @@
+.form-rol {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--brown-light);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(75, 46, 12, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+}
+
+.form-control {
+  padding: 0.7rem;
+  border: 2px solid #be8f8e;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.error-msg {
+  color: #a94442;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.btn-editar {
+  background-color: #f5e5c8!important;
+  color: rgb(70, 29, 29);
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-editar:hover {
+  background-color: var(--button-hover);
+}

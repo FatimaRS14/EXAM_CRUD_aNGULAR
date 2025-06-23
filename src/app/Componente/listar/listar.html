@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="card-header">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h2>Listar Roles</h2>
+      <button class="btn btn-registrar" (click)="guardar()">Registrar nuevo</button>
+    </div>
+  </div>
+
+  <table class="tabla-roles">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+    @for(r of rol; track r.idRol){
+      <tr>
+        <td>{{r.idRol}}</td>
+        <td>{{r.privilegio}}</td>
+        <td>
+          <button class="btn btn-editar" (click)="editar(r.idRol)">Editar</button>
+          <button class="btn btn-eliminar" (click)="eliminar(r.idRol)">Eliminar</button>
+        </td>
+      </tr>
+    }
+    </tbody>
+  </table>
+</div>

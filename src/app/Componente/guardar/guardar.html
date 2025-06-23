@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="card-header">
+    <h2>Registrar Rol</h2>
+  </div>
+
+  <form #formRol="ngForm" (ngSubmit)="guardar()" class="form-rol">
+    <div class="form-group">
+      <label for="idRol">ID del Rol</label>
+      <input
+        type="number"
+        id="idRol"
+        name="idRol"
+        class="form-control"
+        placeholder="Ingresa el id del rol"
+        required
+        [(ngModel)]="r.idRol" />
+    </div>
+
+    <div class="form-group">
+      <label for="privilegio">Privilegio</label>
+      <input
+        type="text"
+        id="privilegio"
+        name="privilegio"
+        class="form-control"
+        placeholder="Ingresa el nombre del rol, solo de acentan caracteres de la a-z"
+        required
+        pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$"
+        [(ngModel)]="r.privilegio" />
+    </div>
+
+    <button class="btn btn-registrar" [disabled]="!formRol.valid">Guardar Rol</button>
+  </form>
+</div>

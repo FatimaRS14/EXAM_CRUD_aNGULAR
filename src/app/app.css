@@ -1,0 +1,146 @@
+:root {
+      --brown-dark: #4b2e0c;
+      --brown-medium: #7b4e1e;
+      --brown-light: #d9b382;
+      --brown-lighter: #f3e5d2;
+      --button-bg: #7b4e1e;
+      --button-hover: #a36b34;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--brown-lighter);
+      margin: 0;
+      padding: 2rem;
+      color: var(--brown-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.3rem;
+      color: var(--brown-dark);
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 2rem;
+      color: var(--brown-medium);
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .cards-container {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .card {
+      background-color: var(--brown-light);
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(75, 46, 12, 0.2);
+      padding: 1.5rem;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 16px rgba(75, 46, 12, 0.3);
+    }
+
+    .card p {
+      flex-grow: 1;
+      font-size: 1rem;
+      color: var(--brown-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      background-color: #4b2e0c !important;
+      color: azure;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      align-self: flex-start;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .btn:hover {
+      background-color: var(--button-hover);
+    }
+
+    @media (max-width: 650px) {
+      .cards-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+      }
+    }
+
+    .card-header {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.btn-registrar {
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-registrar:hover {
+  background-color: var(--button-hover);
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.btn-editar {
+  background-color: #5c3d16;
+  color: white;
+}
+
+.btn-editar:hover {
+  background-color: #7a5122;
+}
+
+.btn-eliminar {
+  background-color: #a52a2a;
+  color: white;
+}
+
+.btn-eliminar:hover {
+  background-color: #c0392b;
+}
